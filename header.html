@@ -1,0 +1,27 @@
+{% load static%}
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="{% url 'home_url' %}">Mentor</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="{% url 'home_url' %}">Home</a></li>
+          <li><a href="{% url 'about_url' %}">About</a></li>
+          <li><a href="{% url 'courses_url' %}">Courses</a></li>
+          <li><a href="{% url 'trainers_url' %}">Trainers</a></li>
+          <li><a href="{% url 'events_url' %}">Events</a></li>
+          <li><a href="{% url 'pricing_url' %}">Pricing</a></li>
+
+          
+          <li><a href="{% url 'contact_url' %}">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="{% url 'courses_url' %}" class="get-started-btn">Get Started</a>
+
+    </div>
+  </header>

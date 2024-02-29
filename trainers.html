@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "head.html" %}
+
+<body>
+
+  <!-- ======= Header ======= -->
+{% include "header.html" %}
+  <!-- End Header -->
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <h2>Trainers</h2>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          {% for trainer in trainers_data %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              {% if trainer.image  %}
+              <img src="{{trainer.image.url}}" class="img-fluid" alt="">
+              {% else %}
+
+              {% endif %}
+              <div class="member-content">
+                <h4>{{trainer.name}}</h4>
+                <span>{{trainer.type}}</span>
+                <p>
+                  {{trainer.description|safe}}
+                </p>
+                <div class="social">
+                  <a href="{{trainers_data.twitter}}"><i class="bi bi-twitter"></i></a>
+                  <a href="{{trainers_data.facebook}}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{trainers_data.instagram}}"><i class="bi bi-instagram"></i></a>
+                  <a href="{{trainers_data.linkedin}}"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+           
+         <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{% static 'assets/img/trainers/trainer-2.jpg' %}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>Sarah Jhinson</h4>
+                <span>Marketing</span>
+                <p>
+                  Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+                </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+        <!--  <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{% static 'assets/img/trainers/trainer-3.jpg' %}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>William Anderson</h4>
+                <span>Content</span>
+                <p>
+                  Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+        </div>
+
+    </div>
+    </section><!-- End Trainers Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {% include "footer.html" %}
+ <!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  {% include "scripts.html" %}
+
+</body>
+
+</html>
